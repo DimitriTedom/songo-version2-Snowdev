@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: songo-game
+    runtime: docker
+    plan: free
+    region: frankfurt # You can change the region based on your preference
+    envVars:
+      - key: PORT
+        value: 80
+    disk:
+      - path: /var/www/html/games
+        size: 1GB
