@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Songo – Multijoueur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Écran de connexion / création de partie -->
+<div id="loginScreen">
+    <h1>Songo – Jeu en ligne</h1>
+    <div class="login-box">
+        <button id="btnNewGame">Créer une nouvelle partie</button>
+        <div id="newGameInfo" style="display:none;">
+            <p>Partie créée ! ID : <strong id="gameIdDisplay"></strong></p>
+            <p>Communiquez cet ID à votre adversaire pour qu'il rejoigne.</p>
+            <button id="btnStartPlaying">Commencer à jouer (en attendant l'adversaire)</button>
+        </div>
+        <hr>
+        <div>
+            <label for="joinGameId">Rejoindre une partie :</label>
+            <input type="text" id="joinGameId" placeholder="ID de la partie">
+            <button id="btnJoinGame">Rejoindre</button>
+            <p id="joinError" style="color:red;"></p>
+        </div>
+    </div>
+</div>
+
+<!-- Écran de jeu (caché au début) -->
+<div id="gameScreen" style="display:none;">
+    <h1>Songo</h1>
+    <div id="turnInfo"></div>
+    <div class="scores">
+        <span>Joueur 1 (haut) : <span id="score0">0</span> graines</span>
+        <span>Joueur 2 (bas) : <span id="score1">0</span> graines</span>
+    </div>
+    <div id="board">
+        <div class="row player0" id="row0"></div>
+        <div class="row player1" id="row1"></div>
+    </div>
+    <div id="statusMessage"></div>
+    <button id="btnQuit">Quitter la partie</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
